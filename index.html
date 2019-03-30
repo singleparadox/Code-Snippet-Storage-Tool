@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code Snippet Storage Tool</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body id="body">
+	<header>
+		<h4>Code Snippet Storage Tool</h4>
+	</header>
+
+	<main>
+		<div id="left">
+			<h5>Navigation</h5>
+			
+			<select id="select_graph">
+				<option value="0">Select PL</option>
+				<option value="1">JavaScript</option>
+				<option value="2">PHP</option>
+				<option value="3">C</option>
+				<option value="4">Java</option>
+				<option value="5">Python</option>
+				<option value="6">C++</option>
+			</select>
+
+			<select id="exist_codes">
+				<option value="0">Select Existing Codes</option>
+
+			</select>
+
+			<input type="text" id="title" placeholder="Insert Title Here"><br>
+			<center><button id="truncate" hidden>Truncate</button></center>
+		</div>
+
+
+		<div id="right">
+			<!--<h5>Graph</h5>-->
+			<center>
+				<div class="ct-chart" id="ct-chart"><br>
+					<button id="update" disabled="true">Update</button>
+					<button id="save" disabled="true">Save</button>
+					<button id="delete" disabled="true">Delete</button>
+				</div>
+			</center>
+
+			<div id="editor"></div>
+		</div>
+	</main>
+
+	
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="js/ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	    var editor = ace.edit("editor");
+	    editor.setTheme("ace/theme/monokai");
+		$('#select_graph').on('change', function() {
+				var lang = this.value;
+				editor.session.setMode("ace/mode/"+language_type(parseInt(lang)));
+		});
+
+	</script>
+
+	<script>
+
+
+	</script>
+</body>
+</html>
